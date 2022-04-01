@@ -1,12 +1,15 @@
 #include "Subsystems/Drivetrain.h"
 
-#include "Constants/Drivetrain.h"
-
 #include <frc/smartdashboard/SmartDashboard.h>
-#include <string>
 
 subsystems::Drivetrain::Drivetrain ()
 {
+  SetName ("Drivetrain");
+
+  AddChild ("Differential Drive", &m_drive);
+
+  frc::SmartDashboard::PutData ("Drivetrain", this);
+
   m_left_front.SetInverted (constants::drivetrain::inverted::LEFT_FRONT);
   m_left_back.SetInverted (constants::drivetrain::inverted::LEFT_BACK);
   m_right_front.SetInverted (constants::drivetrain::inverted::RIGHT_FRONT);
@@ -43,12 +46,6 @@ subsystems::Drivetrain::Drivetrain ()
       constants::drivetrain::closed_loop_ramp_rate::RIGHT_FRONT);
   m_right_back.SetClosedLoopRampRate (
       constants::drivetrain::closed_loop_ramp_rate::RIGHT_BACK);
-
-  AddChild ("Differential Drive", &m_drive);
-  AddChild ("Drivetrain Left", &m_left);
-  AddChild ("Drivetrain Right", &m_right);
-
-  frc::SmartDashboard::PutData ("Drivetrain", this);
 }
 
 void

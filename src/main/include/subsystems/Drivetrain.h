@@ -26,7 +26,8 @@ public:
 
   void TankDrive (double left, double right);
   void ArcadeDrive (double move, double rotate);
-  void CurvatureDrive (double move, double rotate, bool isQuickTurn);
+  void CurvatureDrive (double move, double rotate,
+                              bool isQuickTurn = false);
 
   std::string GetName () const;
 

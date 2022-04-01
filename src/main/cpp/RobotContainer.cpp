@@ -2,30 +2,32 @@
 
 #include "Autonomous.h"
 
+#include <frc/shuffleboard/Shuffleboard.h>
+#include <frc/shuffleboard/ShuffleboardComponent.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc2/command/CommandScheduler.h>
 #include <frc2/command/InstantCommand.h>
 #include <frc2/command/button/JoystickButton.h>
-
 RobotContainer::RobotContainer ()
 {
+  frc::SmartDashboard::PutData (&frc2::CommandScheduler::GetInstance ());
+  
   // Initialize all of your Commands and Subsystems here
   {
-    m_auto_chooser.AddOption ("Nothing", &m_autonomous.nothing);
+    m_auto_chooser.SetDefaultOption ("Nothing", &m_autonomous.nothing);
     m_auto_chooser.AddOption ("Taxi Forward", &m_autonomous.taxi_forwards);
     m_auto_chooser.AddOption ("Taxi Backwards", &m_autonomous.taxi_backwards);
 
     frc::SmartDashboard::PutData ("Autonomous Chooser", &m_auto_chooser);
 
-    m_drive_mode_chooser.AddOption ("Tank Drive", DriveMode::kTank);
+    m_drive_mode_chooser.SetDefaultOption ("Tank Drive", DriveMode::kTank);
     m_drive_mode_chooser.AddOption ("Arcade Single Stick",
                                     DriveMode::kArcadeSingle);
     m_drive_mode_chooser.AddOption ("Arcade Dual Stick",
                                     DriveMode::kArcadeDual);
-  };
 
-  // Configure Button Bindings
-  {};
+    frc::SmartDashboard::PutData ("Drive Mode Chooser", &m_drive_mode_chooser);
+  };
 }
 
 void
