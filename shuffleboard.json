@@ -1,0 +1,258 @@
+{
+  "tabPane": [
+    {
+      "title": "Main",
+      "autoPopulate": true,
+      "autoPopulatePrefix": "Main/",
+      "widgetPane": {
+        "gridSize": 150.0,
+        "showGrid": false,
+        "hgap": 16.0,
+        "vgap": 16.0,
+        "titleType": 0,
+        "tiles": {
+          "10,0": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "ComboBox Chooser",
+              "_source0": "network_table:///SmartDashboard/Autonomous Chooser",
+              "_title": "Autonomous Chooser"
+            }
+          },
+          "9,1": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "ComboBox Chooser",
+              "_source0": "network_table:///SmartDashboard/Drive Mode Chooser",
+              "_title": "Drive Mode Chooser"
+            }
+          },
+          "8,3": {
+            "size": [
+              3,
+              3
+            ],
+            "content": {
+              "_type": "Differential Drivebase",
+              "_source0": "network_table:///LiveWindow/Ungrouped/Differential Drive",
+              "_title": "Differential Drive",
+              "Wheels/Number of wheels": 6,
+              "Wheels/Wheel diameter": 12.0,
+              "Visuals/Show velocity vectors": true
+            }
+          },
+          "7,4": {
+            "size": [
+              1,
+              2
+            ],
+            "content": {
+              "_type": "Basic Subsystem",
+              "_source0": "network_table:///LiveWindow/Ungrouped/Drivetrain",
+              "_title": "Drivetrain"
+            }
+          },
+          "8,0": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Basic FMS Info",
+              "_title": "Basic FMS Info"
+            }
+          },
+          "9,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Accelerometer",
+              "_title": "Accelerometer",
+              "Visuals/Show text": true,
+              "Visuals/Precision": 2,
+              "Visuals/Show tick marks": false,
+              "Range/Min": -1.0,
+              "Range/Max": 1.0
+            }
+          },
+          "10,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "3-Axis Accelerometer",
+              "_title": "3-Axis Accelerometer",
+              "Accelerometer/Range": "k16G",
+              "Visuals/Show value": true,
+              "Visuals/Precision": 2,
+              "Visuals/Show tick marks": false
+            }
+          },
+          "7,2": {
+            "size": [
+              1,
+              2
+            ],
+            "content": {
+              "_type": "Network Table Tree",
+              "_source0": "network_table:///SmartDashboard/Scheduler",
+              "_title": "SmartDashboard/Scheduler"
+            }
+          },
+          "4,3": {
+            "size": [
+              3,
+              3
+            ],
+            "content": {
+              "_type": "PDP",
+              "_title": "PDP",
+              "Visuals/Show voltage and current values": true
+            }
+          },
+          "4,0": {
+            "size": [
+              3,
+              3
+            ],
+            "content": {
+              "_type": "Graph",
+              "_title": "Graph",
+              "Graph/Visible time": 30.0,
+              "Graph/X-axis auto scrolling": false,
+              "Y-axis/Automatic bounds": true,
+              "Y-axis/Upper bound": 1.0,
+              "Y-axis/Lower bound": -1.0,
+              "Y-axis/Unit": "ul"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Camera Veiw",
+      "autoPopulate": true,
+      "autoPopulatePrefix": "",
+      "widgetPane": {
+        "gridSize": 100.0,
+        "showGrid": true,
+        "hgap": 16.0,
+        "vgap": 16.0,
+        "titleType": 0,
+        "tiles": {
+          "6,0": {
+            "size": [
+              6,
+              8
+            ],
+            "content": {
+              "_type": "Camera Stream",
+              "_title": "Back Camera",
+              "Crosshair/Show crosshair": true,
+              "Crosshair/Crosshair color": "#FFFFFFFF",
+              "Controls/Show controls": true,
+              "Controls/Rotation": "NONE",
+              "compression": -1.0,
+              "fps": -1,
+              "imageWidth": -1,
+              "imageHeight": -1
+            }
+          },
+          "0,0": {
+            "size": [
+              6,
+              8
+            ],
+            "content": {
+              "_type": "Camera Stream",
+              "_title": "Front Camera",
+              "Crosshair/Show crosshair": true,
+              "Crosshair/Crosshair color": "#FFFFFFFF",
+              "Controls/Show controls": true,
+              "Controls/Rotation": "NONE",
+              "compression": -1.0,
+              "fps": -1,
+              "imageWidth": -1,
+              "imageHeight": -1
+            }
+          },
+          "13,0": {
+            "size": [
+              3,
+              1
+            ],
+            "content": {
+              "_type": "ComboBox Chooser",
+              "_source0": "network_table:///SmartDashboard/Autonomous Chooser",
+              "_title": "/SmartDashboard/Autonomous Chooser"
+            }
+          },
+          "13,1": {
+            "size": [
+              3,
+              1
+            ],
+            "content": {
+              "_type": "ComboBox Chooser",
+              "_source0": "network_table:///SmartDashboard/Drive Mode Chooser",
+              "_title": "/SmartDashboard/Drive Mode Chooser"
+            }
+          },
+          "12,0": {
+            "size": [
+              1,
+              2
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///FMSInfo/IsRedAlliance",
+              "_title": "/FMSInfo/IsRedAlliance",
+              "Colors/Color when true": "#B31A1AFF",
+              "Colors/Color when false": "#334DB3FF"
+            }
+          },
+          "12,2": {
+            "size": [
+              4,
+              3
+            ],
+            "content": {
+              "_type": "Differential Drivebase",
+              "_source0": "network_table:///LiveWindow/Ungrouped/Differential Drive",
+              "_title": "/LiveWindow/Ungrouped/Differential Drive",
+              "Wheels/Number of wheels": 6,
+              "Wheels/Wheel diameter": 30.0,
+              "Visuals/Show velocity vectors": true
+            }
+          },
+          "12,5": {
+            "size": [
+              4,
+              3
+            ],
+            "content": {
+              "_type": "PDP",
+              "_title": "PDP",
+              "Visuals/Show voltage and current values": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "windowGeometry": {
+    "x": -8.0,
+    "y": -8.0,
+    "width": 1936.0,
+    "height": 1056.0
+  }
+}

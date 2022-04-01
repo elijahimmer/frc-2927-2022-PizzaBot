@@ -24,10 +24,28 @@ public:
 
   frc::DifferentialDrive *GetDiffDrive ();
 
+  enum Motors
+  {
+    kLeftFront,
+    kLeftBack,
+    kRightFront,
+    kRightBack,
+  };
+
+  struct MotorsContainer
+  {
+    rev::CANSparkMax *left_front;
+    rev::CANSparkMax *left_back;
+    rev::CANSparkMax *right_front;
+    rev::CANSparkMax *right_back;
+  };
+
+  rev::CANSparkMax *GetMotor (Motors motor);
+  MotorsContainer GetMotors ();
+
   void TankDrive (double left, double right);
   void ArcadeDrive (double move, double rotate);
-  void CurvatureDrive (double move, double rotate,
-                              bool isQuickTurn = false);
+  void CurvatureDrive (double move, double rotate, bool isQuickTurn = false);
 
   std::string GetName () const;
 

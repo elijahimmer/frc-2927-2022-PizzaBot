@@ -63,6 +63,7 @@ public:
     kTank,
     kArcadeSingle,
     kArcadeDual,
+    kTesting,
   };
 
 private:
@@ -74,4 +75,5 @@ private:
   frc::SendableChooser<frc2::Command *> m_auto_chooser;
 
   frc::SendableChooser<DriveMode> m_drive_mode_chooser;
+
 };

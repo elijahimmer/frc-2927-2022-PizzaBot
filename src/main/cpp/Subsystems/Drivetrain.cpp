@@ -66,6 +66,33 @@ subsystems::Drivetrain::GetDiffDrive ()
   return &m_drive;
 }
 
+rev::CANSparkMax *
+subsystems::Drivetrain::GetMotor (Motors motor)
+{
+  switch (motor)
+    {
+    case Motors::kLeftFront:
+      return &m_left_front;
+    case Motors::kLeftBack:
+      return &m_left_back;
+    case Motors::kRightFront:
+      return &m_right_front;
+    case Motors::kRightBack:
+      return &m_right_back;
+    default:
+      assert ("Invalid motor");
+      return nullptr;
+    }
+}
+
+subsystems::Drivetrain::MotorsContainer
+subsystems::Drivetrain::GetMotors ()
+{
+  static MotorsContainer motors
+      = { &m_left_front, &m_left_back, &m_right_front, &m_right_back };
+  return motors;
+}
+
 void
 subsystems::Drivetrain::TankDrive (double left, double right)
 {
